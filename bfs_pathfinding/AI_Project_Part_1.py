@@ -45,3 +45,11 @@ def bfs_shortest_path(grid):
                 parent[next_pos] = current
     
     return "مسیر یافت نشد"
+
+def reconstruct_path(parent, end):
+    path = []
+    current = end
+    while current is not None:
+        path.append(current)
+        current = parent[current]
+    return path[::-1]  # مسیر را از ابتدا به انتها برمی‌گردانیم
