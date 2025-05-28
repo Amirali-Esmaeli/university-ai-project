@@ -9,3 +9,7 @@ def generate_individual():
 
 def generate_population(size):
     return [generate_individual() for _ in range(size)]
+
+def fitness(individual, exposures):
+    return sum(exposures[i] for i in range(10) if individual[i] == 1)
+
