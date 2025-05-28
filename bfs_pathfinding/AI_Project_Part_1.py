@@ -53,3 +53,22 @@ def reconstruct_path(parent, end):
         path.append(current)
         current = parent[current]
     return path[::-1]  # مسیر را از ابتدا به انتها برمی‌گردانیم
+
+def main():
+    # شبکه نمونه
+    grid = [
+        [0, 0, 0, 1, 1],
+        [1, 1, 0, 1, 1],
+        [0, 0, 0, 0, 0],
+        [1, 1, 0, 1, 1],
+        [1, 1, 0, 0, 0]
+    ]
+    
+    result = bfs_shortest_path(grid)
+    print(result)
+
+if __name__ == "__main__":
+    main()
+
+# خروجی
+[(0, 0), (0, 1), (0, 2), (1, 2), (2, 2), (3, 2), (4, 2), (4, 3), (4, 4)]
