@@ -17,3 +17,19 @@ def tournament_selection(population, exposures, k=3):
     selected = random.sample(population, k)
     return max(selected, key=lambda ind: fitness(ind, exposures))
 
+def crossover(parent1, parent2):
+    point1, point2 = sorted(random.sample(range(1, 9), 2))  # دو نقطه تصادفی بین 1 و 8
+    child = parent1[:point1] + parent2[point1:point2] + parent1[point2:]
+
+    # تنظیم تعداد 1ها به 5
+    ones = sum(child)
+    if ones > 5:
+        indices = [i for i, x in enumerate(child) if x == 1]
+        for i in random.sample(indices, ones - 5):
+            child[i] = 0
+    elif ones < 5:
+        indices = [i for i, x in enumerate(child) if x == 0]
+        for i in random.sample(indices, 5 - ones):
+            child[i] = 1
+    return child
+
