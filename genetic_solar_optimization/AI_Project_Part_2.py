@@ -42,3 +42,22 @@ def mutate(individual, mutation_rate=0.1):
             zero_idx = random.choice(zeros)
             individual[one_idx], individual[zero_idx] = 0, 1
     return individual
+
+def genetic_algorithm(exposures, population_size=10, generations=20):
+    population = generate_population(population_size)
+    
+    for _ in range(generations):
+        new_population = []
+        for _ in range(population_size):
+            parent1 = tournament_selection(population, exposures)
+            parent2 = tournament_selection(population, exposures)
+            child = crossover(parent1, parent2)
+            child = mutate(child)
+            new_population.append(child)
+        population = new_population
+    
+    # پیدا کردن بهترین فرد
+    best_individual = max(population, key=lambda ind: fitness(ind, exposures))
+    best_fitness = fitness(best_individual, exposures)
+    return best_individual, best_fitness
+
