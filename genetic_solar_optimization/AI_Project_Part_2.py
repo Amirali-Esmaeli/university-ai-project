@@ -33,3 +33,12 @@ def crossover(parent1, parent2):
             child[i] = 1
     return child
 
+def mutate(individual, mutation_rate=0.1):
+    if random.random() < mutation_rate:
+        ones = [i for i, x in enumerate(individual) if x == 1]
+        zeros = [i for i, x in enumerate(individual) if x == 0]
+        if ones and zeros:
+            one_idx = random.choice(ones)
+            zero_idx = random.choice(zeros)
+            individual[one_idx], individual[zero_idx] = 0, 1
+    return individual
