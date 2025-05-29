@@ -61,3 +61,16 @@ def genetic_algorithm(exposures, population_size=10, generations=20):
     best_fitness = fitness(best_individual, exposures)
     return best_individual, best_fitness
 
+def main():
+    # لیست نمونه نوردهی
+    exposures = [2, 5, 8, 1, 3, 9, 4, 6, 7, 2]
+    best_individual, best_fitness = genetic_algorithm(exposures)
+    print(f"بهترین رشته باینری: {best_individual}")
+    print(f"مجموع نوردهی: {best_fitness}")
+
+if __name__ == "__main__":
+    main()
+    
+# خروجی
+# بهترین رشته باینری: [0, 1, 1, 0, 0, 1, 0, 1, 1, 0]
+# مجموع نوردهی: 35
