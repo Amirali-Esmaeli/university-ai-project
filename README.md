@@ -27,7 +27,7 @@
 - کتابخانه‌های موردنیاز:
     - برای مسئله 1: `collections.deque`
     - برای مسئله 2: `random`
-    - برای مسئله 3: هیچ کتابخانه اضافی لازم نیست
+- برای مسئله 3: هیچ کتابخانه اضافی لازم نیست
 
 ## نحوه اجرا
 1. فایل‌های پروژه (`AI_Project_Part_1.py`, `AI_Project_Part_2.py`, `AI_Project_Part_3.py`) را در یک پوشه ذخیره کنید.
@@ -73,7 +73,7 @@ This project implements three algorithmic solutions to assist the AstroBot Marti
 - Required libraries:
     - For Problem 1: `collections.deque`
     - For Problem 2: `random`
-    - For Problem 3: No additional libraries required
+- For Problem 3: No additional libraries required
 
 ## How to Run
 1. Save the project files (`AI_Project_Part_1.py`, `AI_Project_Part_2.py`, `AI_Project_Part_3.py`)  in a directory.
