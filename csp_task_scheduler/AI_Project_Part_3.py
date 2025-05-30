@@ -19,3 +19,17 @@ def is_valid_assignment(assignment, task, time_slot):
             if tasks[t]['subsystem'] == tasks[task]['subsystem']:
                 return False
     return True
+
+def csp_backtracking(assignment, tasks_list):
+    if len(assignment) == len(tasks_list):  # همه وظایف تخصیص داده شده‌اند
+        return assignment
+    
+    task = tasks_list[len(assignment)]  # وظیفه بعدی
+    for time_slot in range(1, 6):  # بازه‌های زمانی 1 تا 5
+        if time_slot not in assignment.values():  # بازه استفاده‌نشده
+            if is_valid_assignment(assignment, task, time_slot):
+                assignment[task] = time_slot
+                result = csp_backtracking(assignment.copy(), tasks_list)
+                if result:
+                    return result
+    return None
