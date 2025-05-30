@@ -33,3 +33,20 @@ def csp_backtracking(assignment, tasks_list):
                 if result:
                     return result
     return None
+
+def schedule_tasks():
+    tasks_list = ['T1', 'T2', 'T3', 'T4', 'T5']
+    assignment = csp_backtracking({}, tasks_list)
+    if assignment:
+        return assignment
+    return "راه‌حل یافت نشد"
+
+def main():
+    result = schedule_tasks()
+    print(result)
+
+if __name__ == "__main__":
+    main()
+
+# خروجی
+# {'T1': 1, 'T2': 2, 'T3': 3, 'T4': 5, 'T5': 4}
